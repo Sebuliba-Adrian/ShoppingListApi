@@ -1,6 +1,12 @@
 """
-Test class
+This is a test class
 """
+from app import create_app
+from base64 import b64encode
+from flask import current_app, json, url_for
+from models import db, Category, Item, User
+import status
+from unittest import TestCase
 
 from unittest import TestCase
 
@@ -18,10 +24,19 @@ class InitialTests(TestCase):
         self.app_context.pop()
 
     def get_accept_content_type_headers(self):
-        pass
+        """Helps to add headers on each request"""
+        return {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
 
     def get_authentication_headers(self, username, password):
-        pass
+         """Helps to add authentication  on each request"""
+         authentication_headers = self.get_accept_content_type_headers()
+        authentication_headers['Authorization'] = \
+            'Basic ' + b64encode((username + ':' + password).encode('utf-8')).decode('utf-8')
+        return authentication_headers
+        
 
     def test_request_without_authentication(self):
         """
