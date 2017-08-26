@@ -11,13 +11,7 @@ PORT = 5000
 HOST = "127.0.0.1"
 SQLALCHEMY_ECHO = False
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-SQLALCHEMY_DATABASE_URI = 'sqlite:///test.db' #"postgresql://{DB_USER}:{DB_PASS}@{DB_ADDR}/{DB_NAME}".format(DB_USER="postgres", DB_PASS="a", DB_ADDR="127.0.0.1", DB_NAME="db_repository")
+SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'#"postgresql://{DB_USER}:{DB_PASS}@{DB_ADDR}/{DB_NAME}".format(DB_USER="user_name", DB_PASS="password", DB_ADDR="127.0.0.1", DB_NAME="items")
 SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-TESTING = True
 PAGINATION_PAGE_SIZE = 5
 PAGINATION_PAGE_ARGUMENT_NAME = 'page'
-SERVER_NAME = '127.0.0.1:5000'
-PAGINATION_PAGE_SIZE = 5
-PAGINATION_PAGE_ARGUMENT_NAME = 'page'
-# Disable CSRF protection in the testing configuration
-WTF_CSRF_ENABLED = False
