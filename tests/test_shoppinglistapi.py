@@ -18,7 +18,11 @@ class InitialTests(TestCase):
         self.app_context.pop()
 
     def get_accept_content_type_headers(self):
-        pass
+        """Helps to add headers on each request"""
+        return {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
 
     def get_authentication_headers(self, username, password):
         pass
